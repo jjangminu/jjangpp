@@ -86,7 +86,7 @@ body {
     box-sizing: border-box;
     color: white;
     display: flex;
-    background: url(../source/intro_bg.png) center no-repeat;
+    background: url(../source/index/intro_bg.png) center no-repeat;
     background-size: cover;
     position: relative;
     top: 0px;
