@@ -1,0 +1,622 @@
+/*basic font*/
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/*navi font*/
+@font-face {
+  font-family: "HancomSans-Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomSans-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+/*intro font*/
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*강조 font*/
+@font-face {
+  font-family: "JalnanGothic";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*basic*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+body {
+  font-family: "Pretendard-Regular";
+  cursor: none;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.en {
+  font-family: "JalnanGothic";
+}
+
+/*mouse icon*/
+.mouse {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  display: none;
+}
+/*scroll bar*/
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(255, 249, 232);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(76, 70, 55);
+  border-radius: 10px;
+  background-clip: padding-box;
+  height: 30vh;
+}
+
+@media (min-width: 1000px) {
+  html,
+  body {
+    font-size: 16px;
+    background-color: rgb(23, 41, 34);
+  }
+
+  #intro {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    background: url(../source/intro_bg.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 999;
+  }
+  #intro h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    width: 100%;
+    text-align: center;
+    font-family: "GmarketSansMedium";
+  }
+  #intro span {
+    display: inline-block;
+  }
+  #intro div {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle farthest-side,
+      rgba(255, 249, 232, 0.687),
+      transparent
+    );
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  header {
+    position: fixed;
+    background-color: rgba(76, 70, 55, 0.5);
+    padding: 1rem;
+    color: rgb(255, 249, 232);
+    top: 1.5rem;
+    border-radius: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "HancomSans-Light";
+    box-shadow: rgba(37, 37, 37, 0.3) 0px 0px 1.2rem;
+    display: none;
+    z-index: 999;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    border: 1px dashed transparent;
+    border-radius: 45px;
+    font-size: 1.2rem;
+    width: 130px;
+    text-align: center;
+    transition: 0.5s;
+  }
+  header li.nav_mov {
+    border-color: rgb(255, 249, 232);
+  }
+  header a {
+    display: block;
+    padding: 0.5rem 0rem;
+    transition: 0.5s;
+    border-radius: 45px;
+  }
+  header a:hover {
+    background-color: rgb(37, 37, 37);
+  }
+
+  /*home*/
+  #home {
+    width: 100%;
+    height: 100vh;
+    color: rgb(255, 249, 232);
+    position: relative;
+  }
+  /*home back lines*/
+  #home .lines {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  #home .lineX,
+  #home .lineY {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+  }
+  #home .lineX li {
+    width: 0px;
+    height: 1px;
+    border-bottom: 1px dashed rgb(255, 249, 232);
+    position: absolute;
+    border-radius: 10px;
+    left: 0px;
+  }
+  #home .lineX li:nth-child(1) {
+    top: 2%;
+    animation: homeX2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.1s;
+  }
+  #home .lineX li:nth-child(2) {
+    top: 28%;
+    animation: homeX1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
+  }
+  #home .lineX li:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%);
+    animation: homeX2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+  }
+  #home .lineX li:nth-child(4) {
+    bottom: 27%;
+    animation: homeX1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.3s;
+  }
+  #home .lineX li:nth-child(5) {
+    bottom: 2%;
+    animation: homeX2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.8s;
+  }
+  @keyframes homeX1 {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: 0;
+      width: 100%;
+    }
+  }
+  @keyframes homeX2 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  #home .lineY li {
+    width: 1px;
+    height: 0;
+    border-left: 1px dashed rgb(255, 249, 232);
+    position: absolute;
+  }
+  #home .lineY li:nth-child(1) {
+    left: 5%;
+    animation: homeY2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+  }
+  #home .lineY li:nth-child(2) {
+    left: 27%;
+    animation: homeY1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.4s;
+  }
+  #home .lineY li:nth-child(3) {
+    left: 50%;
+    transform: translateX(-50%);
+    animation: homeY2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.8s;
+  }
+  #home .lineY li:nth-child(4) {
+    right: 27%;
+    animation: homeY1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.2s;
+  }
+  #home .lineY li:nth-child(5) {
+    right: 5%;
+    animation: homeY2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.6s;
+  }
+  @keyframes homeY1 {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0;
+      height: 100%;
+    }
+  }
+  @keyframes homeY2 {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  /*home detail*/
+  #home .wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    box-sizing: border-box;
+  }
+  /*home navi*/
+  #home .wrap .navi {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px dashed rgb(255, 249, 232);
+    justify-content: center;
+    font-size: 1.5rem;
+    padding-top: 1.3rem;
+    font-family: "HancomSans-Light";
+    opacity: 0;
+    animation: homeNavi 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.6s;
+  }
+  #home .wrap .navi li {
+    text-align: center;
+    width: 170px;
+    border-right: 1px dashed rgb(255, 249, 232);
+    background-color: rgb(76, 70, 55);
+  }
+  #home .wrap .navi li:first-child {
+    border-left: 1px dashed rgb(255, 249, 232);
+  }
+  #home .wrap .navi li a {
+    display: block;
+    padding: 1rem 0rem;
+    transition: 0.5s;
+    font-weight: bold;
+  }
+  #home .wrap .navi a:hover {
+    background-color: rgb(255, 249, 232);
+    color: rgb(76, 70, 55);
+  }
+  @keyframes homeNavi {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /*home title*/
+  #home .wrap .title {
+    position: absolute;
+    top: 8rem;
+    left: 6rem;
+    font-size: 7rem;
+    transform: translateX(-5rem);
+    opacity: 0;
+    animation: home_txt 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
+  }
+  #home .wrap .title .inner {
+    margin-top: 2rem;
+    margin-left: 15rem;
+  }
+  /*home text*/
+  #home .wrap .text {
+    position: absolute;
+    top: 8rem;
+    right: 6rem;
+    font-size: 2rem;
+    text-align: right;
+    transform: translateX(5rem);
+    opacity: 0;
+    animation: home_txt 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
+  }
+  #home .wrap .text strong {
+    font-size: 3rem;
+  }
+  @keyframes home_txt {
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  /*home image*/
+  #home .wrap .imgWrap {
+    display: flex;
+    position: absolute;
+    bottom: 3rem;
+    right: 6rem;
+    gap: 2rem;
+  }
+  #home .wrap .imgWrap li {
+    width: 250px;
+    height: 250px;
+    border-radius: 3rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  #home .wrap .imgWrap li:nth-child(1) {
+    animation: home_image 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+  }
+  #home .wrap .imgWrap li:nth-child(2) {
+    animation: home_image 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
+  }
+  #home .wrap .imgWrap li:nth-child(3) {
+    animation: home_image 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+  }
+  #home .wrap .imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  #home .wrap .imgWrap img:hover {
+    transform: scale(1.2);
+  }
+  @keyframes home_image {
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  /*home mov circle*/
+  #home .movWrap {
+    border: 1px dashed rgb(255, 249, 232);
+    position: absolute;
+    bottom: 5rem;
+    left: 15rem;
+    width: 25px;
+    height: 55px;
+    border-radius: 25px;
+    opacity: 0;
+    animation: home_wrap 3s infinite linear;
+    animation-delay: 6.6s;
+  }
+  .movWrap div {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(255, 249, 232);
+    margin: 0px auto;
+    border-radius: 50%;
+    margin-top: 5px;
+    animation: home_circle 2s infinite linear;
+  }
+  @keyframes home_wrap {
+    0% {
+      opacity: 0.5;
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(50px);
+      opacity: 1;
+    }
+  }
+  @keyframes home_circle {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+  }
+
+  #aboutMe {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #logo {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #workDesign {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #workCoding {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #project {
+    width: 100%;
+    height: 100vh;
+    transition: 0.5s;
+  }
+
+  #contact {
+    color: rgb(255, 249, 232);
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+  }
+  #contact .detail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  #contact .detail > div,
+  #contact .detail > ul {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #contact .detail .title {
+    top: 49%;
+    font-size: 3.5rem;
+    width: 100%;
+  }
+  #contact .detail .text {
+    top: 70%;
+    display: flex;
+    font-size: 1.2rem;
+    width: 90%;
+    line-height: 1.5;
+  }
+  #contact .detail .text li {
+    width: calc(100% / 2);
+    padding: 2.9rem;
+    box-sizing: border-box;
+  }
+  #contact .detail .text li:last-child {
+    border-left: 1px dashed rgb(255, 249, 232);
+    text-align: left;
+  }
+  #contact .detail .text b {
+    font-size: 2rem;
+  }
+  #contact .detail .text h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+  #contact .detail .text span {
+    font-style: italic;
+    margin-left: 15rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+  #contact .detail .ex {
+    bottom: 4%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  #contact .detail .ex > p {
+    font-size: 1.5rem;
+  }
+  #contact .detail .ex ul p {
+    font-size: 0.8rem;
+  }
+  #contact .detail .ex i {
+    font-size: 2rem;
+  }
+  #contact .detail .ex ul {
+    display: flex;
+    gap: 1rem;
+  }
+  #contact .detail .make {
+    bottom: -5px;
+  }
+  /*contact line*/
+  #contact .lineWrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #contact .lineX,
+  #contact .lineY {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #contact .lineX li {
+    border-bottom: 1px dashed rgb(255, 249, 232);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+  }
+  #contact .lineX li:nth-child(1) {
+    top: 4%;
+  }
+  #contact .lineX li:nth-child(2) {
+    top: 55%;
+  }
+  #contact .lineX li:nth-child(3) {
+    bottom: 15%;
+  }
+  #contact .lineX li:nth-child(4) {
+    bottom: 4%;
+  }
+  #contact .lineY li {
+    border-left: 1px dashed rgb(255, 249, 232);
+    width: 1px;
+    height: 100%;
+    position: absolute;
+  }
+  #contact .lineY li:nth-child(1) {
+    left: 2%;
+  }
+  #contact .lineY li:nth-child(2) {
+    right: 2%;
+  }
+}
